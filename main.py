@@ -14,6 +14,7 @@ from Articles.load_articles import llm
 from langchain.prompts import PromptTemplate
 from Articles.load_articles import get_completion
 
+
 from Articles.load_articles import security_advisor, relevance_checker
 
 from Articles.load_articles import prompt_injection, check_relevance
