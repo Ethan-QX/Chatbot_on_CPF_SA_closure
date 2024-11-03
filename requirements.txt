@@ -152,7 +152,7 @@ posthog
 prompt_toolkit
 propcache
 proto-plus
-protobuf
+protobuf==3.20.3
 pulsar-client
 pure_eval
 pyarrow
