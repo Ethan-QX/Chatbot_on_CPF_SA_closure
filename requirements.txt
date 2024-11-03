@@ -180,7 +180,7 @@ python-dotenv
 pytube
 pytz
 pyvis
-
+pywin32
 PyYAML
 qdrant-client
 referencing
