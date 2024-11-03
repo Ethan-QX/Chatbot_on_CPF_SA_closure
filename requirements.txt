@@ -25,8 +25,8 @@ click==8.1.7
 cohere==5.11.3
 colorama==0.4.6
 coloredlogs==15.0.1
-crewai==0.76.9
-crewai-tools==0.13.4
+crewai
+crewai-tools
 cryptography==43.0.3
 dataclasses-json==0.6.7
 datasets==3.1.0
@@ -179,7 +179,7 @@ python-dotenv==1.0.1
 pytube==15.0.0
 pytz==2024.2
 pyvis==0.3.2
-pywin32
+pywin32==302
 PyYAML==6.0.2
 qdrant-client==1.12.1
 referencing==0.35.1
