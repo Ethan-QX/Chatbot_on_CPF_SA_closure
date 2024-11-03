@@ -1,3 +1,4 @@
+pip
 aiohappyeyeballs
 aiohttp
 aiosignal
