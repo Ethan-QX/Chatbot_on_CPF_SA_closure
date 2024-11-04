@@ -4,7 +4,6 @@ from crewai import Agent, Task, Crew
 import pandas as pd
 from langchain_openai import ChatOpenAI
 # from helper_functions import llm
-from logics.customer_query_handler import process_user_message
 from langchain.chains import RetrievalQA
 
 #load in vectordb, use rag to answer prompt
