@@ -84,7 +84,8 @@ for filename in os.listdir(pdf_path):
         if filename.lower().endswith('.pdf'):
             loader = PyPDFLoader(file_path)
         else:
-            loader = TextLoader(file_path)
+            continue
+            #loader = TextLoader(file_path)
         
         # Load data and add to list
         data = loader.load()
