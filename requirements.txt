@@ -6,7 +6,7 @@ textloader
 
 openai
 
-chromadb==0.4.24
+chromadb==0.3.24
 
 streamlit
 
