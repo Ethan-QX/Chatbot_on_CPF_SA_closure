@@ -76,6 +76,7 @@ pdf_path = os.path.dirname(os.getcwd())  # Adjust this if necessary
 # Load the documents
 list_of_documents_loaded = []
 for filename in os.listdir(pdf_path):
+    print(filename)
     file_path = os.path.join(pdf_path, filename)
     
     try:
