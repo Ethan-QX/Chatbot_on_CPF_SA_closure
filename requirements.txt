@@ -1,8 +1,6 @@
 streamlit
-
 langchain
 langchain_cohere
-
 openai
 langchain_openai
 langchain_community
