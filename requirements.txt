@@ -1,5 +1,5 @@
 streamlit
-crewai
+
 langchain
 langchain_cohere
 
