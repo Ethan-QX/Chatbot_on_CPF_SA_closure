@@ -67,7 +67,11 @@ def get_completion(prompt, model="gpt-4o-mini", temperature=0, top_p=1.0, max_to
     return response.choices[0].message.content
 
 
-pdf_path = os.path.join(os.path.dirname(os.getcwd()))
+
+
+pdf_path = os.path.dirname(os.getcwd())  # Adjust this if necessary
+
+
 
 # Load the documents
 list_of_documents_loaded = []
