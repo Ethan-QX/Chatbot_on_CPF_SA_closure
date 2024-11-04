@@ -1,4 +1,8 @@
-
+setuptools
+wheel
+libcario2-dev
+pg
+pipkg-config
 pip
 absl-py==1.4.0
 
