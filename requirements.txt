@@ -1,6 +1,6 @@
 setuptools
 wheel
-libcario2-dev
+libcario2
 pg
 pipkg-config
 pip
