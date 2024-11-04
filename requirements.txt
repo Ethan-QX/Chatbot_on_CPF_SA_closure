@@ -16,6 +16,8 @@ langchain-openai
 
 langchain-community
 
+langchain-chroma
+
 crewai
 
 python-dotenv
