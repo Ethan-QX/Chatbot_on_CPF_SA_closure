@@ -1,19 +1,18 @@
 openai
 
-chromadb==0.4.24
+chromadb
 
-streamlit==1.31.1
+streamlit
 
 langchain
 
-langchain-openai==0.0.8
+langchain-openai
 
-langchain-community==0.0.27
+langchain-community
 
 crewai
 
-python-dotenv==1.0.1
+python-dotenv
 
-tiktoken==0.6.0
-
+tiktoken
  
