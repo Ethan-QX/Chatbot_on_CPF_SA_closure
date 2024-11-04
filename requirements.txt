@@ -1,5 +1,5 @@
 os
-
+pip
 absl-py==1.4.0
 
 accelerate==0.34.2
@@ -282,7 +282,6 @@ gast==0.6.0
 
 gcsfs==2024.10.0
 
-GDAL==3.6.4
 
 gdown==5.2.0
 
