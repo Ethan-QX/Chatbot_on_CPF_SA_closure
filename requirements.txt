@@ -1,4 +1,4 @@
 streamlit 
-chroma
+chromadb
 crewai
 openai
