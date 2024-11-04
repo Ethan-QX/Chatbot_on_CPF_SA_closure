@@ -1,16 +1,16 @@
-openai==1.12.0
+openai
 
 chromadb==0.4.24
 
 streamlit==1.31.1
 
-langchain==0.1.11
+langchain
 
 langchain-openai==0.0.8
 
 langchain-community==0.0.27
 
-crewai==0.16.0
+crewai
 
 python-dotenv==1.0.1
 
