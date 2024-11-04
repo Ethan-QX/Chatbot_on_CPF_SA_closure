@@ -21,7 +21,7 @@ cffi==1.17.1
 charset-normalizer==3.4.0
 
 chromadb
-pysqlite3
+
 click==8.1.7
 cohere==5.11.3
 colorama==0.4.6
