@@ -10,4 +10,5 @@ dotenv
 tiktoken
 os
 pypdf2
+pysqlite3
 chromadb
