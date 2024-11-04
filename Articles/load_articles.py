@@ -69,7 +69,7 @@ def get_completion(prompt, model="gpt-4o-mini", temperature=0, top_p=1.0, max_to
 
 
 
-pdf_path = os.path.dirname(os.getcwd())  # Adjust this if necessary
+pdf_path = os.path.dirname(os.path.abspath(__file__))   # Adjust this if necessary
 print(pdf_path)
 
 
