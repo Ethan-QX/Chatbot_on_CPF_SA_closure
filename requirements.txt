@@ -1,7 +1,7 @@
 sqlite3
 pysqlite3
 sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 pypdf2
 
