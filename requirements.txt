@@ -1,5 +1,4 @@
 pysqlite3-binary
-sys
 
 
 pypdf2
