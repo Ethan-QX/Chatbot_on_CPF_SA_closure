@@ -5,6 +5,7 @@ import pandas as pd
 from langchain_openai import ChatOpenAI
 # from helper_functions import llm
 from langchain.chains import RetrievalQA
+import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 #load in vectordb, use rag to answer prompt
 import Articles.load_articles
