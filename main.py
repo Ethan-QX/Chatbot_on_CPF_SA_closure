@@ -1,12 +1,15 @@
-# Set up and run this Streamlit App
+
+
+import sqlite3
+import pysqlite3
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')# Set up and run this Streamlit App
 import streamlit as st
 from crewai import Agent, Task, Crew
 import pandas as pd
 from langchain_openai import ChatOpenAI
 # from helper_functions import llm
 from langchain.chains import RetrievalQA
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 #load in vectordb, use rag to answer prompt
 import Articles.load_articles
 from Articles.load_articles import vectordb
