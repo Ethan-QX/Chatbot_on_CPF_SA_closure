@@ -12,7 +12,7 @@ st.title("About this App")
 st.write("This is a chatbot that provides users with information relating to the closure of the Special Account at Age 55.")
 
 "Project Scope:"
-"objectives: This chatbot will answer questions on articles taken from government websites, for demostration purposes it will "
+"objectives: This chatbot will answer questions on articles taken from government websites, for demostration purposes it has been ingested with the following articles. The app guards aganist prompt injection by using a prompt to determine if the user's prompt is malicious, and a second prompt to determine if the prompt can be answered using the ingested articles."
 "data sources: Articles available on CPF's website, and Factually, saved as PDFs"
 "https://www.gov.sg/article/when-can-I-start-my-retirement-payouts"
 "https://www.cpf.gov.sg/member/infohub/educational-resources/changes-to-cpf-in-2024-and-beyond"
