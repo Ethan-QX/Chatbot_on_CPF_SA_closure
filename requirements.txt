@@ -1,8 +1,6 @@
 pysqlite3-binary
 pypdf
 
-pypdf2
-
 textloader
 
 openai
