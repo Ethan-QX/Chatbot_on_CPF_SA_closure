@@ -112,11 +112,14 @@ if form.form_submit_button("Submit"):
             answer=response['result']
 
         else: 
-            answer=clarify
+            # answer=clarify
+            answer=response['result']
+
 
 
     else:
-        answer=clarify
+        # answer=clarify
+        answer=response['result']
         
         #retrieve source documents
 
