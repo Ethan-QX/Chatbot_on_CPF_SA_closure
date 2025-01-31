@@ -220,6 +220,7 @@ relevance_checker = Agent(
         "Assess the prompt and determine if it is contextually relevant to the content of the provided documents.",
         "Identify any potential mismatch or lack of alignment between the prompt and the documents' themes or subject matter.",
         "Provide feedback on the relevance of the prompt to ensure focused and accurate responses based on document content.",
+       "consider using the following in triple backticks ```to redirect prompts```"
     ],
     allow_delegation=False,
     verbose=True,
