@@ -88,7 +88,7 @@ if form.form_submit_button("Submit"):
 
     inputs = {"user_prompt": user_prompt, "documents": documents_content}
     
-    clarify="I am here to help you with understanding the closure of the CPF Special Account, and how it may affect you"
+    clarify="Wondering how the CPF Special Account closure impacts you? Ask me anything, and I’ll help clarify the details!"
 
     # Execute Task with Security Advisor First
     crew = Crew(
