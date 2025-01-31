@@ -11,7 +11,7 @@ from langchain_openai import ChatOpenAI
 # from helper_functions import llm
 from langchain.chains import RetrievalQA
 #load in vectordb, use rag to answer prompt
-import Articles.load_articles
+# import Articles.load_articles
 from Articles.load_articles import vectordb
 from Articles.load_articles import llm
 from langchain.prompts import PromptTemplate
