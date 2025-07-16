@@ -1,5 +1,5 @@
 # load articles
-import PyPDF
+import pypdf
 import streamlit as st
 from crewai import Agent, Task, Crew
 from openai import OpenAI
