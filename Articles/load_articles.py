@@ -17,6 +17,7 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import os
 import tiktoken
+import pandas
 
 if load_dotenv('.env'):
    # for local development
