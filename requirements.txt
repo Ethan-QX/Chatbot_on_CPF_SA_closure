@@ -24,4 +24,4 @@ crewai
 python-dotenv
 
 tiktoken
- 
+PyPDF2
