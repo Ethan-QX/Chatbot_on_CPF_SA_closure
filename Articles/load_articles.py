@@ -1,23 +1,26 @@
 # load articles
+import os
 import pypdf
+import pandas
+import tiktoken
 import streamlit as st
-from crewai import Agent, Task, Crew
+from dotenv import load_dotenv
+
+# OpenAI imports
 from openai import OpenAI
 from langchain_openai import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
+
+# LangChain imports
 from langchain.chains import RetrievalQA
-from langchain_openai import OpenAIEmbeddings
+from langchain.prompts import PromptTemplate
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
-from langchain.prompts import PromptTemplate
 from langchain.retrievers.multi_query import MultiQueryRetriever
-from langchain_openai import ChatOpenAI
-# from langchain_chroma import Chroma
-from dotenv import load_dotenv
-import os
-import tiktoken
-import pandas
+
+# CrewAI imports
+from crewai import Agent, Task, Crew
 
 if load_dotenv('.env'):
    # for local development
