@@ -7,7 +7,7 @@ import hmac
 # This includes the sidebar, the title, the footer, and the password check.  
 # """  
 
-
+#commented out to remove requirements for password
 # def check_password():  
 #     """Returns `True` if the user had the correct password."""  
 #     def password_entered():  
