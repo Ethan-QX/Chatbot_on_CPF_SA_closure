@@ -49,11 +49,11 @@ qa_chain = RetrievalQA.from_chain_type(
 # llm_response = rag_chain.invoke('how does it affect me i am 25?')
 # print(llm_response['result'])
 
-from helper_functions.utility import check_password  
-
+#commented out password checking
+# from helper_functions.utility import check_password  
 # Check if the password is correct.  
-if not check_password():  
-    st.stop()
+# if not check_password():  
+    # st.stop()
 
 
 # region <--------- Streamlit App Configuration --------->
