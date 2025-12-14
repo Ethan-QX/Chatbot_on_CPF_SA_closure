@@ -68,10 +68,21 @@ st.set_page_config(
 
 st.title("Understanding the Closure of CPF Special Account")
 
+with st.expander("📄 View Source Documents"):
+    for i, doc in enumerate(response['source_documents']):
+        st.markdown(f"**Source {i+1}:** {doc.metadata.get('source', 'Unknown')}")
+        st.text(doc.page_content[:200] + "...")
+st.markdown("**Try asking:**")
+st.markdown("- How does the Special Account closure affect me?")
+st.markdown("- When will my Special Account close?")
+st.markdown("- What happens to my money after closure?")
+
+
 form = st.form(key="form")
 form.subheader("Prompt")
 
 user_prompt = form.text_area("Enter your prompt here", height=200)
+
 
 if form.form_submit_button("Submit"):
     
@@ -117,6 +128,8 @@ if form.form_submit_button("Submit"):
             answer = response['result']
     else:
         answer = response['result']
-    
+    with st.spinner("Analyzing your question..."):
+        response = qa_chain_with_sources.invoke(user_prompt)
     st.write(answer)
     st.divider()
+  
