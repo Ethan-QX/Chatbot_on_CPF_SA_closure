@@ -68,10 +68,6 @@ st.set_page_config(
 
 st.title("Understanding the Closure of CPF Special Account")
 
-with st.expander("📄 View Source Documents"):
-    for i, doc in enumerate(response['source_documents']):
-        st.markdown(f"**Source {i+1}:** {doc.metadata.get('source', 'Unknown')}")
-        st.text(doc.page_content[:200] + "...")
 st.markdown("**Try asking:**")
 st.markdown("- How does the Special Account closure affect me?")
 st.markdown("- When will my Special Account close?")
