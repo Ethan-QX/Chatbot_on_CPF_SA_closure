@@ -1,32 +1,55 @@
+
 import sqlite3
 import pysqlite3
 import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')# Set up and run this Streamlit App
 import streamlit as st
 from crewai import Agent, Task, Crew
 import pandas as pd
 from langchain_openai import ChatOpenAI
+# from helper_functions import llm
+# from langchain.chains import RetrievalQA
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
-# Load vectordb and utilities
+#from langchain_community.chains import RetrievalQA
+#from langchain.chains.retrieval_qa.base import RetrievalQA
+#load in vectordb, use rag to answer prompt
 import Articles.load_articles
-from Articles.load_articles import vectordb, llm, get_completion
+from Articles.load_articles import vectordb
+from Articles.load_articles import llm
+from langchain.prompts import PromptTemplate
+from Articles.load_articles import get_completion
+
+
 from Articles.load_articles import security_advisor, relevance_checker
+
 from Articles.load_articles import prompt_injection, check_relevance
 
+#simple RAG
+# rag_chain=RetrievalQA.from_llm(
+#     retriever=vectordb.as_retriever(), llm=llm,return_source_documents=True)
 
-# Create custom prompt template with your actual template
-template = """Use the following pieces of context to answer the question at the end.
+
+# with a custom prompt
+template =  """Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
 Use three sentences maximum. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer, and always provide the link to the article cited.
 {context}
 Question: {question}
-Helpful Answer: if the question is not relevant, consider responding with "Wondering how the CPF Special Account closure impacts you? Ask me anything, and I'll help clarify the details!"
-"""
+Helpful Answer: if the question is not relevant, consider responding with ```"Wondering how the CPF Special Account closure impacts you? Ask me anything, and I’ll help clarify the details!```"""
+QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+# Run chain
+# qa_chain = RetrievalQA.from_chain_type(
+#     ChatOpenAI(model='gpt-4o-mini'),
+#     retriever=vectordb.as_retriever(),
+#     return_source_documents=True, # Make inspection of document possible
+#     chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+# )
 
+# Create custom prompt template
+template = """..."""  # Same template, just different object
 prompt = ChatPromptTemplate.from_template(template)
 
 # Create retriever
@@ -62,11 +85,29 @@ qa_chain_with_sources = RAGChainWithSources(
 )
 
 
-# Streamlit App Configuration
+
+
+
+
+# print(qa_chain_multiquery.invoke(rewritten))
+
+
+# llm_response = rag_chain.invoke('how does it affect me i am 25?')
+# print(llm_response['result'])
+
+#commented out password checking
+# from helper_functions.utility import check_password  
+# Check if the password is correct.  
+# if not check_password():  
+    # st.stop()
+
+
+# region <--------- Streamlit App Configuration --------->
 st.set_page_config(
     layout="centered",
     page_title="Understanding the Closure of CPF Special Account"
 )
+# endregion <--------- Streamlit App Configuration --------->
 
 st.title("Understanding the Closure of CPF Special Account")
 
@@ -81,8 +122,10 @@ if form.form_submit_button("Submit"):
     
     st.divider()
     
-    # Get response with source documents
+    # response=rag_chain.invoke(user_prompt)
+    # response=qa_chain.invoke(user_prompt)
     response = qa_chain_with_sources.invoke(user_prompt)
+    # #test execution
 
     # Initialize an empty list for the document contents
     documents_content = []
@@ -93,7 +136,7 @@ if form.form_submit_button("Submit"):
 
     inputs = {"user_prompt": user_prompt, "documents": documents_content}
     
-    clarify = "Wondering how the CPF Special Account closure impacts you? Ask me anything, and I'll help clarify the details!"
+    clarify="Wondering how the CPF Special Account closure impacts you? Ask me anything, and I’ll help clarify the details!"
 
     # Execute Task with Security Advisor First
     crew = Crew(
@@ -102,6 +145,7 @@ if form.form_submit_button("Submit"):
         verbose=True,
     )   
     malicious_check_result = crew.kickoff(inputs=inputs)
+
 
     # Only check relevance if prompt is not malicious
     if str(malicious_check_result) == "0":
@@ -112,13 +156,25 @@ if form.form_submit_button("Submit"):
         )
         relevance_check_result = crew.kickoff(inputs=inputs)
         print(relevance_check_result)
-        
         if str(relevance_check_result) == "1":
-            answer = response['result']
+            answer=response['result']
+
         else: 
-            answer = response['result']
+            # answer=clarify
+            answer=response['result']
+
+
+
     else:
-        answer = response['result']
-    
+        # answer=clarify
+        answer=response['result']
+        
+        #retrieve source documents
+
+
+        # response, course_details = process_user_message(user_prompt)
     st.write(answer)
+
     st.divider()
+
+ 

@@ -21,7 +21,7 @@ except ImportError:
     from langchain.text_splitters import RecursiveCharacterTextSplitter
 
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
-
+from langchain.retrievers.multi_query import MultiQueryRetriever
 
 # CrewAI imports
 from crewai import Agent, Task, Crew

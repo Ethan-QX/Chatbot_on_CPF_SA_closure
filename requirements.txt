@@ -26,6 +26,3 @@ python-dotenv
 tiktoken
  
 langchain-text-splitters
-
-langchain
-langchain-community
