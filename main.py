@@ -17,7 +17,6 @@ from Articles.load_articles import vectordb, llm, get_completion
 from Articles.load_articles import security_advisor, relevance_checker
 from Articles.load_articles import prompt_injection, check_relevance
 
-
 # Create custom prompt template with your actual template
 template = """Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
@@ -60,7 +59,6 @@ qa_chain_with_sources = RAGChainWithSources(
     llm=ChatOpenAI(model='gpt-4o-mini'),
     prompt=prompt
 )
-
 
 # Streamlit App Configuration
 st.set_page_config(
